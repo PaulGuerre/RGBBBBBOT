@@ -58,6 +58,14 @@ client.on('message', message => {
         }
     }
 
+    if(message.content === '!checkName') {
+        const checkNameEmbed = new Discord.MessageEmbed()
+            .setTitle("RoleName")
+            .setDescription("The actual roleName is : " + roleName)
+
+        message.channel.send(checkNameEmbed);
+    }
+
     if(message.content === '!help') {
         const helpEmbed = new Discord.MessageEmbed()
             .setTitle("RGBBBBBOT HELP")
