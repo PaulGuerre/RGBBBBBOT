@@ -73,6 +73,18 @@ client.on('message', message => {
 
         message.channel.send(helpEmbed);
     }
+
+    if(message.content === '!submarine') {
+        message.channel.send("",{files: ["./images/submarine.png"]});
+    }
+
+    if(message.content === '!dagouille') {
+        message.channel.send("",{files: ["./images/dagouille.gif"]});
+    }
+
+    if(message.content === '!guidouille') {
+        message.channel.send("",{files: ["./images/guidouille.gif"]});
+    }
 });
 
 client.login(data.token);
