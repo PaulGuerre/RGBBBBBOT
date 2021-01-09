@@ -13,13 +13,14 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-
+    //Séparateur de message
     const args = message.content.split(/ +/g);
     const cmd = args.shift().toLowerCase();
     arg = args.toString();
 
     let userRole = message.guild.roles.cache.find(role => role.name === roleName);
 
+    //Mise en place du changement de couleur du grade indiqué
     if(message.content === '!rgb') {
         const rgbEmbed = new Discord.MessageEmbed()
             .setTitle("RGB STARTED !!!")
@@ -35,6 +36,7 @@ client.on('message', message => {
         }
     }
 
+    //Récupération du role sur lequel mettre en place le changement de couleur
     if(message.content.startsWith('!roleName')) {
         if(arg === '' || arg === ' ') {
             const emptyRoleEmbed = new Discord.MessageEmbed()
@@ -58,6 +60,7 @@ client.on('message', message => {
         }
     }
 
+    //Commande permettant de vérifier le nom du role
     if(message.content === '!checkName') {
         const checkNameEmbed = new Discord.MessageEmbed()
             .setTitle("RoleName")
@@ -66,6 +69,7 @@ client.on('message', message => {
         message.channel.send(checkNameEmbed);
     }
 
+    //Affichage d'un message d'aide pour comprendre l'utilisation du bot
     if(message.content === '!help') {
         const helpEmbed = new Discord.MessageEmbed()
             .setTitle("RGBBBBBOT HELP")
@@ -74,6 +78,7 @@ client.on('message', message => {
         message.channel.send(helpEmbed);
     }
 
+    //Affichage des images submarine / dagouille / guidouille
     if(message.content === '!submarine') {
         message.channel.send("",{files: ["./images/submarine.png"]});
     }
