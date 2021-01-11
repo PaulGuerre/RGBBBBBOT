@@ -9,7 +9,7 @@ const Discord = require('discord.js');
 const client = new Client();
 
 client.on('ready', () => {
-    console.log('Paré à vous souiller !');
+    console.log('Started !');
 });
 
 client.on('message', message => {
@@ -26,7 +26,7 @@ client.on('message', message => {
             .setTitle("RGB STARTED !!!")
 
         message.channel.send(rgbEmbed);
-        for(i=0;i<9999;i++) {
+        for(i=0;i<500;i++) {
             userRole.setColor('#ff0000');
             userRole.setColor('#fbff00');
             userRole.setColor('#32ff00');
