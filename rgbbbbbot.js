@@ -1,4 +1,4 @@
-var fs = require('fs');
+var fs = require("fs");
 
 var data = JSON.parse(fs.readFileSync("./data.json"));
 
@@ -16,7 +16,7 @@ client.on("message", (message) => {
     //Séparateur de message
     const args = message.content.split(/ +/g);
     const cmd = args.shift().toLowerCase();
-    arg = args.toString();
+    let arg = args.toString();
 
     let userRole = message.guild.roles.cache.find((role) => role.name === roleName);
 
@@ -26,7 +26,7 @@ client.on("message", (message) => {
             .setTitle("RGB STARTED !!!")
 
         message.channel.send(rgbEmbed);
-        for(i=0;i<500;i++) {
+        for(let i=0;i<500;i++) {
             userRole.setColor("#ff0000");
             userRole.setColor("#fbff00");
             userRole.setColor("#32ff00");
